@@ -1,11 +1,9 @@
-import Head from 'next/head'
+import Header from "./elements/header"
 
 export default function Home(){
   return (
-    <>
-    <Head>
-      <title>Mon portfolio</title>
-    </Head>
-    </>
+  <>
+  <Header></Header>
+  </>
   )
 }
