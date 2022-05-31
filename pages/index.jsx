@@ -1,9 +1,16 @@
-import Header from "./elements/header"
+import React from "react";
 
-export default function Home(){
-  return (
-  <>
-  <Header></Header>
-  </>
-  )
+import Header from "./elements/header";
+
+
+
+
+export default function HomePage() {
+  return(
+  <div>
+    <Header />
+  </div>
+);
 }
+
+

@@ -9,3 +9,17 @@
 body{
     font-family: "Montserrat";
 }
+
+.nav-link{
+	font-weight: 700!important;
+	font-size: large;
+	color: rgba(0,05,05, 0.70)!important;
+}
+
+.nav-link:hover, .nav-link:focus{
+	color: rgba(0,0,0,0.7)!important;
+}
+
+.navbar-collapse{
+	flex-grow: 0!important;
+}
