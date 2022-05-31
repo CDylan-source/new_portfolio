@@ -13,12 +13,47 @@ body{
 .nav-link{
 	font-weight: 700!important;
 	font-size: large;
-	color: rgba(0,05,05, 0.70)!important;
+	color: unset!important;
 }
 
-.nav-link:hover, .nav-link:focus{
-	color: rgba(0,0,0,0.7)!important;
+
+.body_light{
+	height: 100vh;
+	background: center center no-repeat url('public/light_bg_desktop.jpg')!important;
+	background-size: cover!important;
+	color: black!important;
 }
+
+.body_dark{
+	height: 100vh;
+	background: center center no-repeat url('public/dark_bg_desktop.jpg')!important;
+	background-size: cover!important;
+	color: white!important;
+}
+
+@media (max-width: 768px){
+	.body_light{
+		height: 100vh;
+		background: center center no-repeat url('public/light_bg_mobile.jpg')!important;
+		background-size: cover!important;
+}
+
+	.body_dark{
+		height: 100vh;
+		background: center center no-repeat url('public/dark_bg_mobile.jpg')!important;
+		background-size: cover!important;
+	}
+}
+
+.nav-link:hover{
+	color: #DE6439!important;
+}
+
+.active{
+	color: #DE6439!important;
+}
+
+
 
 .navbar-collapse{
 	flex-grow: 0!important;
