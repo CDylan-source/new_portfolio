@@ -1,5 +1,9 @@
 import React, {useEffect, useState} from "react";
 import Header from "./elements/header";
+import Fade from 'react-bootstrap/Fade';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
+import Link from 'next/link';
 
 
 
@@ -9,8 +13,11 @@ export default function Site() {
   const [page, setPage] = useState('home');
   const localLightMode = typeof window !== "undefined" ? JSON.parse(localStorage.getItem("LIGHT_MODE")) : '';
   const [lightmodeon, setLightmodeon] = useState(localLightMode);
+  const[fade, setFade] = useState(false);
 
- 
+    setTimeout(() => {
+      setFade(true)
+    }, 300)
 
     const handleClick = function (e){
         e.preventDefault();
@@ -31,11 +38,42 @@ export default function Site() {
         navToggle : lightmodeon ? '' : 'navbar-dark'
     }
 
+
   return(
   <div className={lightmodeon ? "body_light" : "body_dark"}>
     <Header onClick={handleClick} light_or_dark={light_or_dark} lightmodeon={lightmodeon} currentPage={page} onNavClick={setPage} />
+    <div className="container d-flex justify-content-center align-items-center">
+      <div className="card card-transparent col-8 mb-4 mb-md-0 py-4 d-flex align-items-center text-center">
+       <div className="card-body">
+          <Fade in={fade}>
+            <img className="shadow-2-strong mb-5 card-img-top mx-auto" src="05.png" style={{width:"120px", transitionDuration:"800ms", transitionDelay:"200ms"}}/>
+          </Fade>
+          <Fade in={fade}>
+            <h1 className="card-title mb-4" style={{transitionDuration:"800ms", transitionDelay:'1s'}}>Chapuis Dylan</h1>
+          </Fade>
+          <Fade in={fade}>
+            <h4 className="card-text mb-4" style={{transitionDuration:"800ms", transitionDelay:"1.5s"}}>Développeur Web</h4>
+          </Fade>
+          <ul className="list-unstyled mb-0 mt-5 row justify-content-center">
+                  <Link href="https://github.com/CDylan-source">
+                    <a className="px-1 col-2" target={"blank"}>
+                      <Fade in={fade}>
+                        <FontAwesomeIcon icon={faGithub} style={{transitionDuration:"800ms", transitionDelay:'2.5s'}}/>
+                      </Fade>
+                      
+                    </a>
+                  </Link>
+                  <Link href="https://www.linkedin.com/in/chapuis-dylan-373679210/">
+                    <a className="px-1 col-2" target={"blank"}>
+                      <Fade in={fade}>
+                        <FontAwesomeIcon icon={faLinkedin} style={{transitionDuration:"800ms", transitionDelay:'2.5s'}}/>
+                      </Fade>
+                    </a>
+                  </Link>
+                </ul>
+        </div>
+      </div>
+    </div>
   </div>
 );
 }
-
-

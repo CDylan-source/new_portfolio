@@ -18,30 +18,34 @@ body{
 
 
 .body_light{
-	height: 100vh;
+	min-height:100vh;
 	background: center center no-repeat url('public/light_bg_desktop.jpg')!important;
 	background-size: cover!important;
 	color: black!important;
+	background-attachment: fixed!important;
 }
 
 .body_dark{
-	height: 100vh;
+	min-height:100vh;
 	background: center center no-repeat url('public/dark_bg_desktop.jpg')!important;
 	background-size: cover!important;
 	color: white!important;
+	background-attachment: fixed!important;
 }
 
 @media (max-width: 768px){
 	.body_light{
-		height: 100vh;
+		min-height:100vh;
 		background: center center no-repeat url('public/light_bg_mobile.jpg')!important;
 		background-size: cover!important;
+		background-attachment: fixed!important;
 }
 
 	.body_dark{
-		height: 100vh;
+		min-height:100vh;
 		background: center center no-repeat url('public/dark_bg_mobile.jpg')!important;
 		background-size: cover!important;
+		background-attachment: fixed!important;
 	}
 }
 
@@ -62,4 +66,14 @@ body{
 a{
 	text-decoration: none!important;
 	color: unset!important;
+}
+
+.card-transparent{
+	background: rgba(24, 24, 16, .05)!important;
+  border-radius: 2em!important;
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.05)!important;
+  background-clip: padding-box!important;
+  box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03)!important;
+  margin-top: 15vh!important;
 }
