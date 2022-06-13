@@ -75,5 +75,63 @@ a{
   border: 2px solid rgba(255, 255, 255, 0.05)!important;
   background-clip: padding-box!important;
   box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03)!important;
-  margin-top: 15vh!important;
 }
+
+.margin-start{
+	margin-top: 5vh!important;
+}
+
+.button {
+    background: white;
+    border: 1px solid #a5b1c2;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    color: #111111!important;
+    display: inline-block;
+    margin: 1rem auto;
+    min-width: 180px;
+    overflow: hidden;
+    padding: 15px 30px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: .3s ease-in-out all;
+	font-weight: 700!important;
+	font-size: large;
+	margin-top: 5vh;
+	letter-spacing: 0.1rem;
+}
+
+@media (max-width:768px){
+	.button{
+		margin-top:2vh;
+	}
+}
+.button span {
+    position: relative;
+    z-index: 2;
+}
+
+.button:before {
+    background: linear-gradient(transparent 0%, rgba(255,255,255,0.6) 50%, transparent 100%);
+    content:'';
+    height: 200%;
+    position: absolute;
+    right: calc(100% + 20px);
+    top: -55%;
+    transform: rotate(-70deg);
+    transition: .6s ease-in-out right;
+    width: 80px;
+    z-index: 0;
+}
+
+.button:hover:before {
+    right: -100%;
+}
+/* Extra visual styling for buttons on hover - optional */
+.button:hover, .button:focus {
+    box-shadow: 0 8px 12px rgba(0,0,0,0.1), inset 0 10px 30px rgba(255,255,255,0.3), inset 0 2px 2px rgba(255,255,255,0.2);
+    color: white;
+}
+
+.button.orange:hover, button.orange:focus { background: #DE6439; border-color: #DE6439; }

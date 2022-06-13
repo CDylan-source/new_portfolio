@@ -45,16 +45,16 @@ export default function Site() {
   <div className={lightmodeon ? "body_light d-flex flex-column" : "body_dark d-flex flex-column"}>
     <Header onClick={handleClick} light_or_dark={light_or_dark} lightmodeon={lightmodeon} currentPage={page} onNavClick={setPage} />
     <div className="container d-flex justify-content-center align-items-center">
-      <div className="card card-transparent col-8 mb-4 mb-md-0 py-4 d-flex align-items-center text-center">
+      <div className="card card-transparent margin-start col-8 mb-4 mb-md-0 py-4 d-flex align-items-center text-center">
        <div className="card-body">
           <Fade in={fade}>
-            <img className="shadow-2-strong mb-5 card-img-top mx-auto" src="05.png" style={{width:"120px", transitionDuration:"800ms", transitionDelay:"200ms"}}/>
+            <img className="shadow-2-strong mb-5 card-img-top mx-auto" src="05.png" style={{width:"120px", transitionDuration:"500ms", transitionDelay:"200ms"}}/>
           </Fade>
           <Fade in={fade}>
-            <h1 className="card-title mb-4" style={{transitionDuration:"800ms", transitionDelay:'1s'}}>Chapuis Dylan</h1>
+            <h1 className="card-title mb-4" style={{transitionDuration:"500ms", transitionDelay:'700ms'}}>Chapuis Dylan</h1>
           </Fade>
           <Fade in={fade}>
-            <h4 className="card-text mb-4" style={{transitionDuration:"800ms", transitionDelay:"1.5s"}}>Développeur Web</h4>
+            <h4 className="card-text mb-4" style={{transitionDuration:"500ms", transitionDelay:"1.2s"}}>Développeur Web</h4>
           </Fade>
           <ul className="list-unstyled mb-0 mt-5 row justify-content-center">
                   <Link href="https://github.com/CDylan-source">
