@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Header from "./elements/header";
 
 
@@ -7,12 +7,22 @@ import Header from "./elements/header";
 export default function Site() {
 
   const [page, setPage] = useState('home');
-  const [lightmodeon, setLightmodeon] = useState(false);
+  const localLightMode = typeof window !== "undefined" ? JSON.parse(localStorage.getItem("LIGHT_MODE")) : '';
+  const [lightmodeon, setLightmodeon] = useState(localLightMode);
+
+ 
 
     const handleClick = function (e){
         e.preventDefault();
         setLightmodeon(!lightmodeon);
+        
     }
+
+    useEffect(() => {
+      if(typeof window !== 'undefined'){
+          localStorage.setItem("LIGHT_MODE", lightmodeon);
+        }
+      }, [lightmodeon])
 
     
    const light_or_dark = {
@@ -22,7 +32,7 @@ export default function Site() {
     }
 
   return(
-    <div className={lightmodeon ? "body_light" : "body_dark"}>
+  <div className={lightmodeon ? "body_light" : "body_dark"}>
     <Header onClick={handleClick} light_or_dark={light_or_dark} lightmodeon={lightmodeon} currentPage={page} onNavClick={setPage} />
   </div>
 );

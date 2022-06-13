@@ -3,12 +3,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Navbar, Nav} from 'react-bootstrap';
 import Lightmode from './lightmode';
 import React from 'react';
+import Link from 'next/link';
 
 
-export default function Header({lightmodeon, light_or_dark, onClick, currentPage, onNavClick}){
+export default function Header({lightmodeon, light_or_dark, onClick, currentPage}){
 
     const navClass = function(page){
-        let className = "mx-auto"
+        let className = "mx-auto nav-item nav-link"
         if(page === currentPage){
             className += " active"
         }
@@ -30,16 +31,16 @@ export default function Header({lightmodeon, light_or_dark, onClick, currentPage
     </Head>
         <header>
             <Navbar expand="lg" className='justify-content-between'>
-            {lightmodeon ? <Navbar.Brand href="/"><img src="logo_light.svg" alt="Le logo du site, un renard orange et noir" className='ms-4'/></Navbar.Brand> :
-                <Navbar.Brand href="/"><img src="logo_dark.svg" alt="Le logo du site, un renard orange et noir" className='ms-4'/></Navbar.Brand>}
+            {lightmodeon ? <Link href="/"><a className='navbar-brand'><img src="logo_light.svg" alt="Le logo du site, un renard orange et noir" className='ms-4'/></a></Link> :
+                <Link href="/"><a className='navbar-brand'><img src="logo_dark.svg" alt="Le logo du site, un renard orange et noir" className='ms-4'/></a></Link>}
                 <Lightmode onClick={onClick} light_or_dark={light_or_dark}></Lightmode>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" className={'me-4 ' + light_or_dark['navToggle']}/>
                 <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>
                     <Nav className="me-4">
-                        <Nav.Link href="/" className={navClass('home')} onClick={onNavClick}>Home</Nav.Link>
-                        <Nav.Link href="/about" className={navClass('about')} onClick={onNavClick}>À propos</Nav.Link>
-                        <Nav.Link href="/portfolio" className={navClass('portfolio')} onClick={onNavClick}>Portfolio</Nav.Link>
-                        <Nav.Link href="/contact" className={navClass('contact')} onClick={onNavClick}>Contact</Nav.Link>
+                        <Link href="/"><a className={navClass('home')}>Home</a></Link>
+                        <Link href="/about"><a className={navClass('about')}>À propos</a></Link>
+                        <Link href="/portfolio"><a className={navClass('portfolio')}>Portfolio</a></Link>
+                        <Link href="/contact"><a className={navClass('contact')}>Contact</a></Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
