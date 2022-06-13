@@ -4,6 +4,8 @@ import Fade from 'react-bootstrap/Fade';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 import Link from 'next/link';
+import Footer from "./elements/footer";
+import List from "./elements/list";
 
 
 
@@ -40,7 +42,7 @@ export default function Site() {
 
 
   return(
-  <div className={lightmodeon ? "body_light" : "body_dark"}>
+  <div className={lightmodeon ? "body_light d-flex flex-column" : "body_dark d-flex flex-column"}>
     <Header onClick={handleClick} light_or_dark={light_or_dark} lightmodeon={lightmodeon} currentPage={page} onNavClick={setPage} />
     <div className="container d-flex justify-content-center align-items-center">
       <div className="card card-transparent col-8 mb-4 mb-md-0 py-4 d-flex align-items-center text-center">
@@ -57,23 +59,23 @@ export default function Site() {
           <ul className="list-unstyled mb-0 mt-5 row justify-content-center">
                   <Link href="https://github.com/CDylan-source">
                     <a className="px-1 col-2" target={"blank"}>
-                      <Fade in={fade}>
-                        <FontAwesomeIcon icon={faGithub} style={{transitionDuration:"800ms", transitionDelay:'2.5s'}}/>
-                      </Fade>
-                      
+                        <FontAwesomeIcon icon={faGithub}/>
                     </a>
                   </Link>
                   <Link href="https://www.linkedin.com/in/chapuis-dylan-373679210/">
                     <a className="px-1 col-2" target={"blank"}>
-                      <Fade in={fade}>
-                        <FontAwesomeIcon icon={faLinkedin} style={{transitionDuration:"800ms", transitionDelay:'2.5s'}}/>
-                      </Fade>
+                        <FontAwesomeIcon icon={faLinkedin}/>
                     </a>
                   </Link>
-                </ul>
+            </ul>
         </div>
       </div>
     </div>
+    <div className="container d-flex justify-content-center my-2 my-sm-5 text-center">
+      <h2>Bienvenue sur mon Portfolio</h2>
+    </div>
+    <List />
+    <Footer/>
   </div>
 );
 }
