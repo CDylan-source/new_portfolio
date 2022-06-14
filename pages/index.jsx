@@ -6,8 +6,8 @@ import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 import Link from 'next/link';
 import Footer from "./elements/footer";
 import List from "./elements/list";
-
-
+import Image  from "next/image";
+import profilePic from '../public/05.png';
 
 
 export default function Site() {
@@ -40,6 +40,8 @@ export default function Site() {
         navToggle : lightmodeon ? '' : 'navbar-dark'
     }
 
+    
+
 
   return(
   <div className={lightmodeon ? "body_light d-flex flex-column" : "body_dark d-flex flex-column"}>
@@ -47,14 +49,12 @@ export default function Site() {
     <div className="container d-flex justify-content-center align-items-center">
       <div className="card card-transparent margin-start col-8 mb-4 mb-md-0 py-4 d-flex align-items-center text-center">
        <div className="card-body">
+          <Image src={profilePic} alt="Photo de l'auteur" className="shadow-2-strong mb-5 card-img-top mx-auto" style={{width:"120px", height:"auto", transitionDuration:"400ms"}} layout="raw" priority/>
           <Fade in={fade}>
-            <img className="shadow-2-strong mb-5 card-img-top mx-auto" src="05.png" style={{width:"120px", transitionDuration:"500ms", transitionDelay:"200ms"}}/>
+            <h1 className="card-title mb-4" style={{transitionDuration:"400ms", transitionDelay:'500ms'}}>Chapuis Dylan</h1>
           </Fade>
           <Fade in={fade}>
-            <h1 className="card-title mb-4" style={{transitionDuration:"500ms", transitionDelay:'700ms'}}>Chapuis Dylan</h1>
-          </Fade>
-          <Fade in={fade}>
-            <h4 className="card-text mb-4" style={{transitionDuration:"500ms", transitionDelay:"1.2s"}}>Développeur Web</h4>
+            <h4 className="card-text mb-4" style={{transitionDuration:"400ms", transitionDelay:".9s"}}>Développeur Web</h4>
           </Fade>
           <ul className="list-unstyled mb-0 mt-5 row justify-content-center">
                   <Link href="https://github.com/CDylan-source">

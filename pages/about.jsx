@@ -46,17 +46,17 @@ export default function About() {
     <div className="container d-flex flex-column margin-start">
       <div className="card card-transparent mb-4 p-4 d-flex align-items-center text-center col-md-6 col-8">
         <Fade in={fade}>
-          <p className="card-text fs-5" style={{transitionDuration:"500ms", transitionDelay:"400ms"}}>Depuis toujours passionné par l’informatique et les nouvelles technologies, j’ai rejoint la formation de développeur web au sein de l’Access Code School en avril 2021.</p>
+          <p className="card-text fs-5" style={{transitionDuration:"400ms"}}>Depuis toujours passionné par l’informatique et les nouvelles technologies, j’ai rejoint la formation de développeur web au sein de l’Access Code School en avril 2021.</p>
         </Fade>
       </div>
       <div className="card card-transparent mb-4 p-4 d-flex align-items-center text-center col-md-6 offset-md-6 col-8 offset-4">
         <Fade in={fade}>
-          <p className="card-text fs-5" style={{transitionDuration:"500ms", transitionDelay:"900ms"}}>Ça a été pour moi une réelle révélation, le plaisir de transformer l’abstrait en concret, le code en page web, m’a rappelé ma première passion, les mathématiques.</p>
+          <p className="card-text fs-5" style={{transitionDuration:"400ms", transitionDelay:"500ms"}}>Ça a été pour moi une réelle révélation, le plaisir de transformer l’abstrait en concret, le code en page web, m’a rappelé ma première passion, les mathématiques.</p>
         </Fade>
       </div>
       <div className="card card-transparent mb-4 p-4 d-flex align-items-center text-center col-md-6 col-8">
         <Fade in={fade}>
-          <p className="card-text fs-5" style={{transitionDuration:"500ms", transitionDelay:"1400ms"}}>Je me plais à continuer d’apprendre et effectuer mes veilles technologiques. Récemment, c’est sur React que mon dévolu s’est jeté, ce framework associé à Nextjs est d’une impressionante efficacité.</p>
+          <p className="card-text fs-5" style={{transitionDuration:"400ms", transitionDelay:"900ms"}}>Je me plais à continuer d’apprendre et effectuer mes veilles technologiques. Récemment, c’est sur React que mon dévolu s’est jeté, ce framework associé à Nextjs est d’une impressionante efficacité.</p>
         </Fade>
       </div>
     </div>

@@ -21,7 +21,7 @@ export default function Header({lightmodeon, light_or_dark, onClick, currentPage
     <React.Fragment>
     <Head>
         <title>Mon portfolio</title>
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <meta name="description" content="My portfolio" />
         <meta name="keywords" content="Portfolio, React, NextJs" />
         <meta name="author" content="Dylan Chapuis" />

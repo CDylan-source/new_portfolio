@@ -1,3 +1,5 @@
 node_modules
 dark_bg*
 light_bg*
+.env
+crash.log
