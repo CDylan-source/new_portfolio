@@ -17,15 +17,15 @@ model portfolio_joint {
 
 model portfolio_projets {
   idprojet        Int               @id
-  titre           String            @db.Char(25)
-  lien            String?           @db.Char(200)
-  short           String            @db.Char(200)
-  description     String            @db.Char(500)
+  titre           String            @db.VarChar
+  lien            String?           @db.VarChar
+  short           String            @db.VarChar
+  description     String            @db.VarChar
   portfolio_joint portfolio_joint[]
 }
 
 model portfolio_tags {
   idtag           Int               @id
-  tag             String            @db.Char(20)
+  tag             String            @db.VarChar
   portfolio_joint portfolio_joint[]
 }

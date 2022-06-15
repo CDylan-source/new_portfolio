@@ -10,32 +10,24 @@ import Button from "./elements/button";
 
 export default function About() {
 
-  const [page, setPage] = useState('about');
-  const localLightMode = typeof window !== "undefined" ? JSON.parse(localStorage.getItem("LIGHT_MODE")) : '';
-  const [lightmodeon, setLightmodeon] = useState(localLightMode);
-
- 
-
+    const [page, setPage] = useState('about');
+    const localLightMode = typeof window !== "undefined" ? JSON.parse(localStorage.getItem("LIGHT_MODE")) : '';
+    const [lightmodeon, setLightmodeon] = useState(localLightMode);
     const handleClick = function (e){
         e.preventDefault();
         setLightmodeon(!lightmodeon);
     }
-
     useEffect(() => {
       if(typeof window !== 'undefined'){
           localStorage.setItem("LIGHT_MODE", lightmodeon);
         }
       }, [lightmodeon])
-
-    
    const light_or_dark = {
         sun: lightmodeon ? '#DE6439' : '#fff',
         moon: lightmodeon ? '#fff' : '#DE6439',
         navToggle : lightmodeon ? '' : 'navbar-dark'
     }
-
     const[fade, setFade] = useState(false);
-
     setTimeout(() => {
       setFade(true)
     }, 300)
