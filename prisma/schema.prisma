@@ -21,6 +21,7 @@ model portfolio_projets {
   lien            String?           @db.VarChar
   short           String            @db.VarChar
   description     String            @db.VarChar
+  image           String?           @db.VarChar
   portfolio_joint portfolio_joint[]
 }
 
