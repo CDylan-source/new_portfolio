@@ -209,6 +209,20 @@ a{
 
 .more.orange:hover, .more.orange:focus { background: #DE6439; border-color: #DE6439; }
 
+.more.noir:hover, .more.noir:focus {background: black; border-color: black; color:white!important;}
+
+.more.blanc:hover, .more.blanc.focus {background: white; border-color: white; color:black!important;}
+
+.startnoir{
+	background: black;
+	border-color: white;
+	color: white!important;
+}
+
+.startnoir:before{
+	background: linear-gradient(transparent 0%, rgba(0,0,0,0.6) 50%, transparent 100%);
+}
+
 @media (min-width:768px){
 	.more{
 		font-size:1rem;

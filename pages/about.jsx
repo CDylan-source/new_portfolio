@@ -52,7 +52,10 @@ export default function About() {
         </Fade>
       </div>
     </div>
-    <Button href='/portfolio'>Aller voir mon Portfolio</Button>
+    <div className="d-flex justify-content-center flex-wrap container gap-3">
+      <Button href='/portfolio'>Aller voir mon Portfolio</Button>
+      <Button href='cv_chapuis_dylan.pdf' target="blank">Voir mon CV</Button>
+    </div>
     <Footer/>
   </div>
 );
