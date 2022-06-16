@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
-import Header from "./elements/header";
+import Header from "../public/elements/header";
 import Fade from 'react-bootstrap/Fade';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 import Link from 'next/link';
-import Footer from "./elements/footer";
-import List from "./elements/list";
+import Footer from "../public/elements/footer";
+import List from "../public/elements/list";
 import Image  from "next/image";
 import profilePic from '../public/05.png';
 

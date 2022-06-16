@@ -178,6 +178,7 @@ a{
 	font-weight: 700!important;
 	font-size: 0.8rem;
 	letter-spacing: 0.1rem;
+	max-width: 180px;
 }
 
 .more span{
@@ -245,7 +246,7 @@ a{
 	margin-right: auto;
 	outline: 0;
 	border-radius: 4px;
-	box-shadow: 0 0 2px rgb(204, 204, 204);
+	border: none;
   	height: 100%;
   	text-align: left;
   	cursor: pointer;
@@ -259,3 +260,33 @@ option{
 	font-weight: 600;
 }
 
+.form-group{
+	width: 100%;
+	max-width: 800px;
+}
+
+input, textarea{
+	max-width: 800px;
+	background-color: rgba(255, 255, 255, 0.5)!important;
+	backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.05)!important;
+  background-clip: padding-box!important;
+  font-weight: 600!important;
+}
+input:focus, textarea:focus{
+	box-shadow:0 0 0 0.05rem rgb(0 0 0 / 25%)!important;
+}
+
+
+label{
+	font-weight: 700;
+}
+
+.input-dark{
+	background-color: rgba(0,0,0,0.1)!important;
+	color: white!important;
+}
+
+.input-dark:focus{
+	box-shadow:0 0 0 0.05rem rgb(255 255 255 / 25%)!important;
+}

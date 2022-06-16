@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
-import Header from "./elements/header";
-import Footer from "./elements/footer";
+import Header from "../public/elements/header";
+import Footer from "../public/elements/footer";
 import { Fade } from "react-bootstrap";
-import Button from "./elements/button";
+import Button from "../public/elements/button";
 
 
 
@@ -54,7 +54,7 @@ export default function About() {
     </div>
     <div className="d-flex justify-content-center flex-wrap container gap-3">
       <Button href='/portfolio'>Aller voir mon Portfolio</Button>
-      <Button href='cv_chapuis_dylan.pdf' target="blank">Voir mon CV</Button>
+      <Button href='/cv_chapuis_dylan.pdf' target="blank">Voir mon CV</Button>
     </div>
     <Footer/>
   </div>

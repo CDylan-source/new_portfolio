@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
-import Header from "./elements/header";
-import Footer from "./elements/footer";
+import Header from "../public/elements/header";
+import Footer from "../public/elements/footer";
 import {PrismaClient} from "@prisma/client";
 import Image from "next/image";
 import Modal from 'react-bootstrap/Modal';
