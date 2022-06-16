@@ -40,10 +40,9 @@ export default function Portfolio({Projets}){
   return(
   <div className={lightmodeon ? "body_light d-flex flex-column" : "body_dark d-flex flex-column"}>
     <Header onClick={handleClick} light_or_dark={light_or_dark} lightmodeon={lightmodeon} currentPage={page} onNavClick={setPage}/>
-    
+    <div className="customcontainer d-flex flex-wrap gap-5 justify-content-center mb-4 margin-start">
     {Projets.map((projet, id) => {return(
-    <div className="container">
-      <div className="card card-transparent margin-start col-md-4 col-10 mb-4 mb-md-0 py-4 d-flex offset-1 offset-md-0 align-items-center text-center">       
+      <div className="card card-transparent col-10 col-sm-8 col-md-6 col-lg-5 col-xl-3 mb-md-0 py-4 d-flex align-items-center text-center max-width">       
     <div className="card-body">
        <Image src={projet.image} alt="Photo du projet" className="shadow-2-strong mb-4 card-img-top mx-auto" style={{width:"100%", height:"auto", borderRadius: "0.6rem"}} width="1000" height="1000" layout="raw"/>
             <h2 className="card-title mb-3 titre">{projet.titre}</h2>
@@ -59,9 +58,8 @@ export default function Portfolio({Projets}){
             <button className="more orange" onClick={() => handleShow(id)}><span>En savoir +</span></button>
         </div>
       </div>
-      </div>
     )})}
-    
+    </div>
      <Modal show={show} onHide={handleClose} size="lg">
         <Modal.Header closeButton>
           <Modal.Title>

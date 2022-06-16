@@ -229,3 +229,11 @@ a{
 	}
 }
 
+.customcontainer{
+	width:90vw;
+	margin-left: 5vw;
+}
+
+.max-width{
+	max-width: 400px;
+}
