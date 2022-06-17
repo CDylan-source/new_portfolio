@@ -149,7 +149,6 @@ export async function getStaticProps(){
       return{
         props:{
             Projets        },
-        revalidate:2000,
+        
       }
 }
-// https://drive.google.com/file/d/1zHuBeqD_1RtgSzgQIsG0dbIOZl9LMDGX/view?usp=sharing

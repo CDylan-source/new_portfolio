@@ -17,6 +17,8 @@ export default function Site() {
   const [lightmodeon, setLightmodeon] = useState(localLightMode);
   const[fade, setFade] = useState(false);
 
+  
+
     setTimeout(() => {
       setFade(true)
     }, 300)
@@ -24,7 +26,6 @@ export default function Site() {
     const handleClick = function (e){
         e.preventDefault();
         setLightmodeon(!lightmodeon);
-        
     }
 
     useEffect(() => {

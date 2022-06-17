@@ -27,26 +27,53 @@ export default function Contact(){
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [submitted, setSubmitted] = useState(false);
+    
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log('Sending');
+      let data = {
+        name,
+        email,
+        message
+      }
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      }).then((res) => {
+        console.log('Response received');
+        if(res.status === 200){
+          console.log('Response succeeded!');
+          setSubmitted(true);
+          setName('');
+          setEmail('');
+          setMessage('');
+        }
+      })
+    }
 
     return(
         <div className={lightmodeon ? "body_light d-flex flex-column" : "body_dark d-flex flex-column"}>
     <Header onClick={handleClick} light_or_dark={light_or_dark} lightmodeon={lightmodeon} currentPage={page} onNavClick={setPage}/>
     <div className="container d-flex flex-column my-auto">
-      <form className="d-flex flex-column gap-4 align-items-center">
+      <form className="d-flex flex-column gap-4 align-items-center" >
         <div className="form-group">
           <label htmlFor="email">Email</label>
-          <input type="email" name="email" className={light_or_dark['input']} placeholder="Entrez votre mail"/>
+          <input type="email" name="email" className={light_or_dark['input']} placeholder="Entrez votre mail" onChange={(e) => setEmail(e.target.value)}/>
         </div>
         <div className="form-group">
           <label htmlFor="name">Nom</label>
-          <input type="name" name="name" placeholder="Entrez votre nom" className={light_or_dark['input']}/>
+          <input type="name" name="name" placeholder="Entrez votre nom" className={light_or_dark['input']} onChange={(e) => setName(e.target.value)}/>
         </div>
         <div className="form-group">
           <label htmlFor="message">Message</label>
-          <textarea name="message" placeholder="Entrez votre message" id="message" cols="30" rows="10" className={light_or_dark['input']} style={{resize:"none"}} />
+          <textarea name="message" placeholder="Entrez votre message" id="message" cols="30" rows="10" className={light_or_dark['input']} style={{resize:"none"}} onChange={(e) => setMessage(e.target.value)}/>
         </div>
         <div className="form-group">
-        <button type="submit" className="more orange my-3">Envoyer</button>
+        <button type="submit" className="more orange my-3" onClick={(e) => handleSubmit(e)}>Envoyer</button>
         </div>
       </form>
     </div>

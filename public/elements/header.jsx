@@ -28,8 +28,7 @@ export default function Header({lightmodeon, light_or_dark, onClick, currentPage
         <meta name="keywords" content="Portfolio, React, NextJs" />
         <meta name="author" content="Dylan Chapuis" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {lightmodeon ? <link rel="shortcut icon" href="logo_light.svg" type="image/x-icon" /> :
-        <link rel="shortcut icon" href="logo_dark.svg" type="image/x-icon" />}
+        <link rel="shortcut icon" href="logo_light.svg" type="image/x-icon" />
     </Head>
         <header>
             <Navbar expand="lg" className='justify-content-between'>
