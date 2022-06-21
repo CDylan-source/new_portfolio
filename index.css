@@ -36,11 +36,11 @@ body{
 }
 
 .background_light{
-	background-image: url('public/light_bg_desktop.jpg');
+	background-image: url('public/light_bg_desktop.webp');
 }
 
 .background_dark{
-	background-image: url('public/dark_bg_desktop.jpg');
+	background-image: url('public/dark_bg_desktop.webp');
 }
 
 .body_dark{
@@ -50,10 +50,10 @@ body{
 
 @media (max-width: 768px){
 	.background_light{
-		background-image: url('public/light_bg_mobile.jpg');
+		background-image: url('public/light_bg_mobile.webp');
 	}
 	.background_dark{
-		background-image: url('public/dark_bg_mobile.jpg');
+		background-image: url('public/dark_bg_mobile.webp');
 	}
 }
 

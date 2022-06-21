@@ -87,16 +87,16 @@ export default function Contact(){
           <label htmlFor="email">Email</label>
           <input type="email" name="email" className={light_or_dark['input']} placeholder="Entrez votre mail" onChange={(e) => setEmail(e.target.value)} value={email} required/>
           {errorMail ?
-            <div className="alert alert-danger mt-3" role="alert">L'adresse mail entrée n'est pas correcte</div> :
-            ''
+            <div className="alert alert-danger mt-3" role="alert">L&apos;adresse mail entrée n&apos;est pas correcte</div> :
+            null
         }
         </div>
         <div className="form-group">
           <label htmlFor="name">Nom</label>
           <input type="name" name="name" placeholder="Entrez votre nom" className={light_or_dark['input']} onChange={(e) => setName(e.target.value)} value={name} required/>
           {errorName ?
-            <div className="alert alert-danger mt-3" role="alert">Le nom entré n'est pas correct</div> :
-            ''
+            <div className="alert alert-danger mt-3" role="alert">Le nom entré n&apos;est pas correct</div> :
+            null
         }
         </div>
         <div className="form-group">
@@ -106,21 +106,21 @@ export default function Contact(){
         <div className="form-group">
         {submitted ? 
           <div className="alert alert-success" role="alert">Message envoyé !</div> :
-          ''
+          null
       }
         {empty ? 
-          <div className="alert alert-danger" role="alert">Toutes les cases n'ont pas été remplies</div> :
-          ''
+          <div className="alert alert-danger" role="alert">Toutes les cases n&apos;ont pas été remplies</div> :
+          null
       }
       {connectionError ? 
           <div className="alert alert-danger" role="alert">Un problème est survenu lors de la connexion, veuillez réessayer plus tard</div> :
-          ''
+          null
       }
         {!loader ? 
           <button type="submit" className="more orange my-3" onClick={(e) => handleSubmit(e)}>Envoyer</button> :
           <button className="more orange my-3" type="button" disabled>
           <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-            Loading...
+            Chargement...
           </button>
       }
       

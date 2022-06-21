@@ -1,8 +1,8 @@
-require('dotenv').config();
+
 const PASSWORD = process.env.password;
 
 
-export default function(req, res){
+export default function Form(req, res){
     let nodemailer = require('nodemailer');
     const transporter = nodemailer.createTransport({
         port: 587,

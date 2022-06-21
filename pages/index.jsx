@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Footer from "../public/elements/footer";
 import List from "../public/elements/list";
 import Image  from "next/image";
-import profilePic from '../public/05.png';
+import profilePic from '../public/05.webp';
 
 
 export default function Site() {
