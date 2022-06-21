@@ -46,6 +46,7 @@ export default function Site() {
 
   return(
   <div className={lightmodeon ? "body_light d-flex flex-column" : "body_dark d-flex flex-column"}>
+    <div className={lightmodeon ? "background background_light" : "background background_dark"}></div>
     <Header onClick={handleClick} light_or_dark={light_or_dark} lightmodeon={lightmodeon} currentPage={page} onNavClick={setPage} />
     <div className="container d-flex justify-content-center align-items-center">
       <div className="card card-transparent margin-start col-8 mb-4 mb-md-0 py-4 d-flex align-items-center text-center">

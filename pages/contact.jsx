@@ -27,10 +27,17 @@ export default function Contact(){
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [submitted, setSubmitted] = useState(false);
+    const [loader, setLoader] = useState(false);
+    const [errorMail, setErrorMail] = useState(false);
+    const [errorName, setErrorName] = useState(false);
+    const [empty, setEmpty] = useState(false);
     
     const handleSubmit = (e) => {
       e.preventDefault();
-      console.log('Sending');
+      setLoader(true);
+      setEmpty(false);
+      setErrorMail(false);
+      setErrorName(false);
       let data = {
         name,
         email,
@@ -42,38 +49,74 @@ export default function Contact(){
           'Accept': 'application/json, text/plain, */*',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data)
-      }).then((res) => {
+        body: JSON.stringify(data)}).then((res) => {
         console.log('Response received');
         if(res.status === 200){
           console.log('Response succeeded!');
+          setLoader(false);
           setSubmitted(true);
           setName('');
           setEmail('');
           setMessage('');
+          return;
+        }
+        else if (res.status === 500){
+          setLoader(false);
+          setSubmitted(false); 
+          res.json().then((response) => {
+          console.log(response.errors);
+          response.errors.includes('email') ? setErrorMail(true) : '';
+          response.errors.includes('name') ? setErrorName(true) : '';
+          response.errors.includes('empty') ? setEmpty(true) : '';
+        })
         }
       })
+      
     }
 
     return(
         <div className={lightmodeon ? "body_light d-flex flex-column" : "body_dark d-flex flex-column"}>
+          <div className={lightmodeon ? "background background_light" : "background background_dark"}></div>
     <Header onClick={handleClick} light_or_dark={light_or_dark} lightmodeon={lightmodeon} currentPage={page} onNavClick={setPage}/>
     <div className="container d-flex flex-column my-auto">
       <form className="d-flex flex-column gap-4 align-items-center" >
         <div className="form-group">
           <label htmlFor="email">Email</label>
-          <input type="email" name="email" className={light_or_dark['input']} placeholder="Entrez votre mail" onChange={(e) => setEmail(e.target.value)}/>
+          <input type="email" name="email" className={light_or_dark['input']} placeholder="Entrez votre mail" onChange={(e) => setEmail(e.target.value)} value={email} required/>
+          {errorMail ?
+            <div className="alert alert-danger mt-3" role="alert">L'adresse mail entrée n'est pas correcte</div> :
+            ''
+        }
         </div>
         <div className="form-group">
           <label htmlFor="name">Nom</label>
-          <input type="name" name="name" placeholder="Entrez votre nom" className={light_or_dark['input']} onChange={(e) => setName(e.target.value)}/>
+          <input type="name" name="name" placeholder="Entrez votre nom" className={light_or_dark['input']} onChange={(e) => setName(e.target.value)} value={name} required/>
+          {errorName ?
+            <div className="alert alert-danger mt-3" role="alert">Le nom entré n'est pas correct</div> :
+            ''
+        }
         </div>
         <div className="form-group">
           <label htmlFor="message">Message</label>
-          <textarea name="message" placeholder="Entrez votre message" id="message" cols="30" rows="10" className={light_or_dark['input']} style={{resize:"none"}} onChange={(e) => setMessage(e.target.value)}/>
+          <textarea name="message" placeholder="Entrez votre message" id="message" cols="30" rows="10" className={light_or_dark['input']} style={{resize:"none"}} onChange={(e) => setMessage(e.target.value)} value={message} required/>
         </div>
         <div className="form-group">
-        <button type="submit" className="more orange my-3" onClick={(e) => handleSubmit(e)}>Envoyer</button>
+        {submitted ? 
+          <div className="alert alert-success" role="alert">Message envoyé !</div> :
+          ''
+      }
+        {empty ? 
+          <div className="alert alert-danger" role="alert">Toutes les cases n'ont pas été remplies</div> :
+          ''
+      }
+        {!loader ? 
+          <button type="submit" className="more orange my-3" onClick={(e) => handleSubmit(e)}>Envoyer</button> :
+          <button className="more orange my-3" type="button" disabled>
+          <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Loading...
+          </button>
+      }
+      
         </div>
       </form>
     </div>

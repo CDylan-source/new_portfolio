@@ -1,0 +1,24 @@
+{
+    "Projets" : [{
+        "idprojet": 1,
+        "titre": "Fiday Gestion",
+        "short": "Site réalisé sous Wordpress lors de mon stage de fin de formation",
+        "description": "J'ai pu participer à l'élaboration de ce site lors de mon stage de fin de formation, intégralement sous Wordpress. C'était un projet enrichissant par la proximité avec mes \"clients\". Un deuxième stagiaire sera venu par la suite afin de réaliser les nouvelles demandes du PDG de l'entreprise (comme réaliser des articles)",
+        "lien": "http://www.fidaygestion.fr/",
+        "image": "https://drive.google.com/uc?export=view&id=1V-g0J2IsVKc40iJUP2eWW1rQHsueKr17",
+        "tags": [
+        {
+            "tag": "Wordpress"
+        },
+        {
+            "tag": "PHP"
+        },
+        {
+            "tag": "HTML5"
+        },
+        {
+            "tag": "CSS3"
+        }
+        ]}
+        ]
+}

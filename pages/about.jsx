@@ -34,6 +34,7 @@ export default function About() {
 
   return(
   <div className={lightmodeon ? "body_light d-flex flex-column" : "body_dark d-flex flex-column"}>
+    <div className={lightmodeon ? "background background_light" : "background background_dark"}></div>
     <Header onClick={handleClick} light_or_dark={light_or_dark} lightmodeon={lightmodeon} currentPage={page} onNavClick={setPage}/>
     <div className="container d-flex flex-column margin-start">
       <div className="card card-transparent mb-4 p-4 d-flex align-items-center text-center col-md-6 col-8">
