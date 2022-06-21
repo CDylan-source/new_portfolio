@@ -31,6 +31,7 @@ export default function Contact(){
     const [errorMail, setErrorMail] = useState(false);
     const [errorName, setErrorName] = useState(false);
     const [empty, setEmpty] = useState(false);
+    const [connectionError, setConnectionError] = useState(false);
     
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -38,6 +39,7 @@ export default function Contact(){
       setEmpty(false);
       setErrorMail(false);
       setErrorName(false);
+      setConnectionError(false)
       let data = {
         name,
         email,
@@ -68,6 +70,7 @@ export default function Contact(){
           response.errors.includes('email') ? setErrorMail(true) : '';
           response.errors.includes('name') ? setErrorName(true) : '';
           response.errors.includes('empty') ? setEmpty(true) : '';
+          response.errors.includes('connexion') ? setConnectionError(true) : '';
         })
         }
       })
@@ -107,6 +110,10 @@ export default function Contact(){
       }
         {empty ? 
           <div className="alert alert-danger" role="alert">Toutes les cases n'ont pas été remplies</div> :
+          ''
+      }
+      {connectionError ? 
+          <div className="alert alert-danger" role="alert">Un problème est survenu lors de la connexion, veuillez réessayer plus tard</div> :
           ''
       }
         {!loader ? 
